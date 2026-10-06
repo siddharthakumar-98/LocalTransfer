@@ -7,7 +7,7 @@ LocalTransfer moves files between two Macs (an M4 MacBook Pro and an M2 MacBook 
 | Milestone | Branch | Status |
 |---|---|---|
 | M0: Repo setup, roadmap | `docs/roadmap` | ✅ Done |
-| M1: GUI with a mock peer | `M1` | 🚧 In progress: M1.1 ✅ M1.2 ✅ |
+| M1: GUI with a mock peer | `M1` | 🚧 In progress: M1.1 ✅ M1.2 ✅ M1.3 ✅ |
 | M2: Real CLI transfer over the same Wi-Fi | `M2` | ⏳ Not started |
 | M3: GUI + real networking combined | `M3` | ⏳ Not started |
 | Later: BLE, AWDL, content-addressed skip, menu-bar agent, Share extension, drop folder, transport auto-switch | — | 💤 Shelved |
@@ -427,7 +427,7 @@ The GUI comes first (M1, against the mock peer). The CLI arrives in M2 with real
 | Slint / egui | ❌ Non-native | ❌ Weak external drag-and-drop | ❌ Same FFI problem | — |
 
 ### GUI (M1 against the mock; real peer from M3)
-- **Window:** two panes side by side. The left is **"This Mac"**. The right is the **other Mac**, titled with its name (e.g. "MacBook Air") and showing a connection indicator: green for connected, yellow for weak, grey for disconnected.
+- **Window:** two panes side by side. The left is titled **"This Mac"**, with this computer's name and `~/Desktop` underneath. The right is titled **"Other Mac"**, with the peer's name (the mock calls itself "Mock Mac") and its connection status underneath, plus a connection indicator: green for connected, yellow for weak, grey for disconnected.
 - **Finder-style list view in each pane** (not icon view), built on SwiftUI `Table`:
   - Columns: **Name, Date Modified, Size, Kind**.
   - Every column sorts via `sortOrder`. Names sort with `localizedStandardCompare`, like Finder.
@@ -496,9 +496,9 @@ Rules for every milestone:
 |---|---|---|
 | ✅ **M1.1** Skeleton and build pipeline | Cargo workspace (`rust-toolchain.toml`, `deny.toml`, clippy config), `lt-core` with the `Backend` types and a stub, `lt-ffi` (UniFFI), `scripts/build-rust.sh`, and `apps/macos/LocalTransfer.xcodeproj` (macOS 14, App Sandbox off, ad-hoc "Sign to Run Locally"). The Xcode build phase calls the script. GitHub Actions CI covers the Rust jobs and `xcodebuild`. | `xcodebuild -project apps/macos/LocalTransfer.xcodeproj -scheme LocalTransfer -destination 'platform=macOS,arch=arm64' build` succeeds from a clean clone. The app launches into an empty two-pane window showing the `lt-core` version string fetched over UniFFI. `cargo test` and CI are green. |
 | ✅ **M1.2** `MockBackend` | The full `Backend` trait and types (§5), `MockBackend` (fixture tree, latency and throughput profiles, link states, Blip/Drop/Drop-at-50%, sandboxed atomic writer), `MockControl`, and the FFI exports for both plus the `EventListener` callback. | Rust tests with tokio time paused cover: listing matches the fixture; progress is monotonic, throttled to ≤10 Hz and reaches 100%; exactly one `TransferFinished` per transfer; Blip gives suspend then resume; Drop gives `Failed(ConnectionLost)`; cancel removes the partial; a clash gives `x (1)`; a property test shows writes stay inside the sandbox and source files are byte-identical before and after. `xcodebuild build` is still green. |
-| **M1.3** Two-pane Finder-style browser | `LocalFileSource` (FileManager), `BackendClient` (Swift wrapper over the FFI object), the pane view (`Table` with Name, Date Modified, Size and Kind columns, sorting, lazy disclosure rows, real icons, back and forward, path bar), and both panes opening at `~/Desktop`. | XCTest view-model tests: Finder-like sort per column in both directions, navigation history, path-bar segments, size and date formatting, icon and Kind lookup for folder, PDF, PNG, ZIP and an unknown extension. Manually, both panes browse, folders expand, and back and the path bar work. |
+| ✅ **M1.3** Two-pane Finder-style browser | `LocalFileSource` (FileManager), `BackendClient` (Swift wrapper over the FFI object), the pane view (`Table` with Name, Date Modified, Size and Kind columns, sorting, lazy disclosure rows, real icons, back and forward, path bar), and both panes opening at `~/Desktop`. | XCTest view-model tests: Finder-like sort per column in both directions, navigation history, path-bar segments, size and date formatting, icon and Kind lookup for folder, PDF, PNG, ZIP and an unknown extension. Manually, both panes browse, folders expand, and back and the path bar work. |
 | **M1.4** Transfers | Drag and drop in both directions (local file URLs onto the peer pane trigger Send; a custom `Transferable` remote-item type dropped on the local pane triggers Get), Send/Get buttons, the transfer list (progress, speed, ETA, Cancel), and the mock-mode banner with Reveal. | XCUITest with `--mock --mock-profile fast`: select a file, Send, it reaches 100% and appears in the peer pane; select a peer file, Get, it reaches 100% and the file exists in `MockSandbox/Received/`. Manually, dragging works in both directions, and `~/Desktop` is unchanged afterwards (compare `ls -la` before and after). |
-| **M1.5** Connection states and error UI | Connection indicator, Debug menu (Blip, Drop, Drop-at-50%, link quality, reset and reveal sandbox), the "Reconnecting…" row state, failed rows with a clear reason and Retry, and the connection-lost banner. | XCUITest: start a transfer, trigger Drop at 50%, and the row shows "Connection to MacBook Air lost" with Retry, the indicator turns grey, and no file or partial is left in the sandbox. Blip shows "Reconnecting…" and then completes. The full M1 checklist (§10) passes. |
+| **M1.5** Connection states and error UI | Connection indicator, Debug menu (Blip, Drop, Drop-at-50%, link quality, reset and reveal sandbox), the "Reconnecting…" row state, failed rows with a clear reason and Retry, and the connection-lost banner. | XCUITest: start a transfer, trigger Drop at 50%, and the row shows "Connection to the other Mac lost" with Retry, the indicator turns grey, and no file or partial is left in the sandbox. Blip shows "Reconnecting…" and then completes. The full M1 checklist (§10) passes. |
 
 **M1.1 notes (done 2026-10-06):**
 - The `M1` branch starts from `docs/replan`, so it carries this re-plan. (The re-plan has since reached `main` through PR #1.)
@@ -518,6 +518,15 @@ Rules for every milestone:
 - `lt-ffi` owns a 2-thread tokio runtime. Async FFI calls hop onto it, and `set_event_listener` forwards events to a Swift `EventListener` from a runtime thread.
 - The app now starts on the mock peer (sandboxed under `~/Library/Application Support/LocalTransfer/MockSandbox`), falling back to the stub if the sandbox can't be created. Two Swift tests exercise the mock through the FFI.
 - CI: `actions/checkout` bumped from v4 to v5 (Node 24), which removes the Node 20 deprecation warning.
+
+**M1.3 notes (done 2026-10-06):**
+- Folders expand with SwiftUI's native `DisclosureTableRow`, using a recursive `TableRowContent` whose children load on first expand. The `NSOutlineView` fallback from §11 wasn't needed.
+- Pane titles: **"This Mac"** (subtitle: this computer's name · `~/Desktop`) and **"Other Mac"** (subtitle: the peer's name · connection status). The mock peer now calls itself **"Mock Mac"**, so it can't be mistaken for a real machine.
+- Each pane has its own Back/Forward buttons in its header rather than a shared window toolbar. Double-click (or Return) opens a folder.
+- Finder parity: hidden files are skipped, packages such as `.app` behave like files, folders show "--" for size, an empty file shows "Zero bytes", and types the system can't describe show "Document". Remote Kind and icons come from the file extension via `UTType`.
+- `BackendClient` delivers backend events on the main actor; a `RemoteChanged` event refreshes the peer pane.
+- When the app runs as the unit-test host, the local pane lists an empty temporary folder instead of `~/Desktop`, so tests never trigger the Desktop privacy prompt, which would hang CI.
+- 18 new XCTests cover sorting per column in both directions, navigation history, path-bar segments, size and date formatting, type, Kind and icon lookup, lazy expansion, error messages, and both file sources.
 
 **M1 is done when:**
 - the app builds from the command line with `xcodebuild`
@@ -728,7 +737,7 @@ Two Nodes run on `127.0.0.1`, each with a tempdir root, the file keystore and st
 | **Rust inside the Xcode build** (cargo and UniFFI codegen called from `xcodebuild`) | One `scripts/build-rust.sh`, shared by the Xcode build phase and CI. The script phase sets `ENABLE_USER_SCRIPT_SANDBOXING = NO`, because Xcode 15+ sandboxes script phases. `uniffi` and `uniffi-bindgen` versions are pinned together. Generated Swift goes into DerivedData and isn't committed. `xcodebuild` runs in CI from M1.1. |
 | **Xcode version drift** (16.4 locally vs the CI image vs the other Mac) | Pin `DEVELOPER_DIR` in CI. Record the Xcode version in the README. Avoid APIs newer than the macOS 14 deployment target. |
 | **`.pbxproj` merge conflicts** | Only M1 and M3 touch `apps/macos`, never at the same time. The project is generated by XcodeGen from `project.yml`, so conflicts are resolved in the YAML and the project is regenerated. |
-| **SwiftUI `Table` limits** (lazy disclosure rows, drag and drop between tables, sorting hierarchical rows) | Prototype early in M1.3. If it's blocking, wrap `NSOutlineView` in `NSViewRepresentable` for the pane. Decide by the end of M1.3. |
+| **SwiftUI `Table` limits** (lazy disclosure rows, drag and drop between tables, sorting hierarchical rows) | Lazy disclosure rows and hierarchical sorting work natively (verified in M1.3). Drag and drop between tables is still to be proven in M1.4; the `NSOutlineView` fallback remains available if it blocks. |
 | TCC and firewall prompts repeat on rebuilds while builds are ad-hoc signed (M1/M2) | Accept it during M1 and M2. M3.4 adds a stable self-signed identity, and it can move earlier if it gets in the way. |
 | quinn throughput on macOS (no GSO/GRO) | M2 benchmark against `scp`. The `Transport` trait allows a TCP+TLS fallback. |
 | `mdns-sd` coexisting with mDNSResponder on port 5353 | `Discovery` trait. Swap to a dns-sd binding if needed. `--addr` and the last-known-address cache work regardless. |

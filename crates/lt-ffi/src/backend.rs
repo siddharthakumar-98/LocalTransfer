@@ -206,7 +206,7 @@ mod tests {
     fn mock_lists_and_transfers_with_events() {
         let tmp = tempfile::tempdir().unwrap();
         let backend = mock(&tmp);
-        assert_eq!(backend.peer().device_name, "MacBook Air");
+        assert_eq!(backend.peer().device_name, "Mock Mac");
         let root = RemotePath {
             root: "desktop".into(),
             components: vec![],

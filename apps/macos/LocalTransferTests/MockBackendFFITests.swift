@@ -18,7 +18,7 @@ final class MockBackendFFITests: XCTestCase {
     func testMockListsFixtureAndReceivesIntoSandbox() async throws {
         let backend = try CoreBackend.mock(
             config: MockConfig(sandboxRoot: sandbox.path, profile: .fast, seed: 1))
-        XCTAssertEqual(backend.peer().deviceName, "MacBook Air")
+        XCTAssertEqual(backend.peer().deviceName, "Mock Mac")
         XCTAssertEqual(backend.connection(), .connected(quality: .good))
 
         let entries = try await backend.listDir(path: RemotePath(root: "desktop", components: []))

@@ -91,7 +91,8 @@ pub struct MockConfig {
 }
 
 impl MockConfig {
-    /// Defaults: Wi-Fi-good throughput, seed 1, a peer called "MacBook Air".
+    /// Defaults: Wi-Fi-good throughput, seed 1, a peer called "Mock Mac"
+    /// (deliberately not a real model name, so it can't be mistaken for a real Mac).
     #[must_use]
     pub fn new(sandbox_root: impl Into<PathBuf>) -> Self {
         Self {
@@ -99,9 +100,9 @@ impl MockConfig {
             profile: Profile::WifiGood,
             seed: 1,
             peer: PeerInfo {
-                alias: "air".to_owned(),
-                device_name: "MacBook Air".to_owned(),
-                model: Some("Mac14,2".to_owned()),
+                alias: "mock".to_owned(),
+                device_name: "Mock Mac".to_owned(),
+                model: None,
                 device_id: "MOCK-MOCK-MOCK-MOCK-MOCK".to_owned(),
             },
         }
