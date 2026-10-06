@@ -1,0 +1,92 @@
+# XcodeGen spec for the LocalTransfer app. Regenerate the project after editing:
+#   cd apps/macos && xcodegen
+# Both this file and the generated LocalTransfer.xcodeproj are committed.
+name: LocalTransfer
+options:
+  bundleIdPrefix: io.github.siddharthakumar-98
+  deploymentTarget:
+    macOS: "14.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+settings:
+  base:
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    # Apple Silicon only.
+    ARCHS: arm64
+    # Ad-hoc "Sign to Run Locally". A stable self-signed identity comes in M3.4.
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "-"
+    DEVELOPMENT_TEAM: ""
+    # The app needs arbitrary ~/Desktop access and networking (ROADMAP §9).
+    ENABLE_APP_SANDBOX: NO
+    ENABLE_HARDENED_RUNTIME: NO
+    # Xcode 15+ sandboxes script phases; build-rust.sh writes to target/ and Generated/.
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+    # Generated UniFFI module map and header (lt_ffiFFI).
+    SWIFT_INCLUDE_PATHS: $(SRCROOT)/Generated
+targets:
+  LocalTransfer:
+    type: application
+    platform: macOS
+    sources:
+      - path: LocalTransfer
+      # Build outputs of scripts/build-rust.sh (not committed).
+      - path: Generated/lt_ffi.swift
+        optional: true
+        buildPhase: sources
+      - path: Generated/RustBuildInfo.swift
+        optional: true
+        buildPhase: sources
+    info:
+      path: LocalTransfer/Info.plist
+      properties:
+        CFBundleDisplayName: LocalTransfer
+        LSApplicationCategoryType: public.app-category.utilities
+        NSHumanReadableCopyright: "Copyright © 2026 Siddhartha Kumar. MIT OR Apache-2.0."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.siddharthakumar-98.LocalTransfer
+      configs:
+        Debug:
+          OTHER_LDFLAGS: $(SRCROOT)/../../target/aarch64-apple-darwin/debug/liblt_ffi.a
+        Release:
+          OTHER_LDFLAGS: $(SRCROOT)/../../target/aarch64-apple-darwin/release/liblt_ffi.a
+    preBuildScripts:
+      - name: Build Rust core
+        script: |
+          "$SRCROOT/../../scripts/build-rust.sh"
+        # cargo does its own incremental build, so run on every build.
+        basedOnDependencyAnalysis: false
+        outputFiles:
+          - $(SRCROOT)/Generated/lt_ffi.swift
+          - $(SRCROOT)/Generated/lt_ffiFFI.h
+          - $(SRCROOT)/Generated/module.modulemap
+          - $(SRCROOT)/Generated/RustBuildInfo.swift
+  LocalTransferTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: LocalTransferTests
+    dependencies:
+      - target: LocalTransfer
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.siddharthakumar-98.LocalTransferTests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  LocalTransfer:
+    build:
+      targets:
+        LocalTransfer: all
+        LocalTransferTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - LocalTransferTests
+    archive:
+      config: Release
