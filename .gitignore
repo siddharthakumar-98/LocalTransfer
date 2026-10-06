@@ -1,0 +1,42 @@
+# Rust
+/target/
+**/target/
+**/*.rs.bk
+*.pdb
+
+# Fuzzing
+/fuzz/artifacts/
+/fuzz/coverage/
+/fuzz/target/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Xcode
+xcuserdata/
+DerivedData/
+*.xcuserstate
+build/
+
+# Editors
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Secrets and keys (never commit)
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.cer
+*.mobileprovision
+
+# LocalTransfer dev keystores and pairing data
+*.lt-keystore
+.lt-dev/
