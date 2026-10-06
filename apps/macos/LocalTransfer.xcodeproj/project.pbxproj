@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		872B66AB46AE068488AB1D68 /* lt_ffi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630670DCBDCCAB1F7F510C4D /* lt_ffi.swift */; };
+		C39EFC8C9170761433223FFC /* LocalTransferApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B3879F0E65BDCB18920B06 /* LocalTransferApp.swift */; };
+		C74D925763EC0029A196DAC6 /* FFIVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2E0B3FD94CB4983CBC8AA /* FFIVersionTests.swift */; };
+		D3430EEBDFD25006F0B35F3D /* RustBuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5B2A725FD7EB18FFFA585B /* RustBuildInfo.swift */; };
+		DE23F0FAEB879F9EBBE3E9CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741B501CF3D92D0981613C48 /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD6E0F32A63F3EBF43BCAB18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B325392C6C0993E0E6D3B69C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F07175E2E9D3A7656AF43ED;
+			remoteInfo = LocalTransfer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1497423C5AC85D17A51C7426 /* LocalTransfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalTransfer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		630670DCBDCCAB1F7F510C4D /* lt_ffi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lt_ffi.swift; sourceTree = "<group>"; };
+		741B501CF3D92D0981613C48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86F2E0B3FD94CB4983CBC8AA /* FFIVersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFIVersionTests.swift; sourceTree = "<group>"; };
+		9941CE83890DDE6DA8471E13 /* LocalTransferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalTransferTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2E041A489339B9F15C885EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EB5B2A725FD7EB18FFFA585B /* RustBuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustBuildInfo.swift; sourceTree = "<group>"; };
+		F1B3879F0E65BDCB18920B06 /* LocalTransferApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTransferApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0B916B90B9BC07BCFED5D87A = {
+			isa = PBXGroup;
+			children = (
+				2C3C99989DB2B11003616290 /* Generated */,
+				4069A1876848F33380C9920E /* LocalTransfer */,
+				133B0847A6CC5AED4CDF51A6 /* LocalTransferTests */,
+				9BC18581D21CFD4FB42C4747 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		133B0847A6CC5AED4CDF51A6 /* LocalTransferTests */ = {
+			isa = PBXGroup;
+			children = (
+				86F2E0B3FD94CB4983CBC8AA /* FFIVersionTests.swift */,
+			);
+			path = LocalTransferTests;
+			sourceTree = "<group>";
+		};
+		2C3C99989DB2B11003616290 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				630670DCBDCCAB1F7F510C4D /* lt_ffi.swift */,
+				EB5B2A725FD7EB18FFFA585B /* RustBuildInfo.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		4069A1876848F33380C9920E /* LocalTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				741B501CF3D92D0981613C48 /* ContentView.swift */,
+				E2E041A489339B9F15C885EF /* Info.plist */,
+				F1B3879F0E65BDCB18920B06 /* LocalTransferApp.swift */,
+			);
+			path = LocalTransfer;
+			sourceTree = "<group>";
+		};
+		9BC18581D21CFD4FB42C4747 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1497423C5AC85D17A51C7426 /* LocalTransfer.app */,
+				9941CE83890DDE6DA8471E13 /* LocalTransferTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		723C69805FA0ECE4E580EF08 /* LocalTransferTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6337556E13A210795AC5B55 /* Build configuration list for PBXNativeTarget "LocalTransferTests" */;
+			buildPhases = (
+				C5A9014847949F0C9F0D72D8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE7FDF88727A654DB3AC42FD /* PBXTargetDependency */,
+			);
+			name = LocalTransferTests;
+			packageProductDependencies = (
+			);
+			productName = LocalTransferTests;
+			productReference = 9941CE83890DDE6DA8471E13 /* LocalTransferTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8F07175E2E9D3A7656AF43ED /* LocalTransfer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DBBDE26FADD0BF571C354E6 /* Build configuration list for PBXNativeTarget "LocalTransfer" */;
+			buildPhases = (
+				F021ED41B5E35E6053905DF5 /* Build Rust core */,
+				9A9B8E5AD9FA86D9CEA94DC8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocalTransfer;
+			packageProductDependencies = (
+			);
+			productName = LocalTransfer;
+			productReference = 1497423C5AC85D17A51C7426 /* LocalTransfer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B325392C6C0993E0E6D3B69C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					723C69805FA0ECE4E580EF08 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+					8F07175E2E9D3A7656AF43ED = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 8EB4F18EC1194C5132C8729A /* Build configuration list for PBXProject "LocalTransfer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 0B916B90B9BC07BCFED5D87A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9BC18581D21CFD4FB42C4747 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F07175E2E9D3A7656AF43ED /* LocalTransfer */,
+				723C69805FA0ECE4E580EF08 /* LocalTransferTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F021ED41B5E35E6053905DF5 /* Build Rust core */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust core";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Generated/lt_ffi.swift",
+				"$(SRCROOT)/Generated/lt_ffiFFI.h",
+				"$(SRCROOT)/Generated/module.modulemap",
+				"$(SRCROOT)/Generated/RustBuildInfo.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/../../scripts/build-rust.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A9B8E5AD9FA86D9CEA94DC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE23F0FAEB879F9EBBE3E9CC /* ContentView.swift in Sources */,
+				C39EFC8C9170761433223FFC /* LocalTransferApp.swift in Sources */,
+				D3430EEBDFD25006F0B35F3D /* RustBuildInfo.swift in Sources */,
+				872B66AB46AE068488AB1D68 /* lt_ffi.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5A9014847949F0C9F0D72D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74D925763EC0029A196DAC6 /* FFIVersionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE7FDF88727A654DB3AC42FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F07175E2E9D3A7656AF43ED /* LocalTransfer */;
+			targetProxy = AD6E0F32A63F3EBF43BCAB18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		541BA02DDA38750D5E9938C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LocalTransfer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = "$(SRCROOT)/../../target/aarch64-apple-darwin/debug/liblt_ffi.a";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.siddharthakumar-98.LocalTransfer";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DC7675291F9E55D0B8F0F9BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LocalTransfer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = "$(SRCROOT)/../../target/aarch64-apple-darwin/release/liblt_ffi.a";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.siddharthakumar-98.LocalTransfer";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E3DB4A5780AC980DD7893AC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.siddharthakumar-98.LocalTransferTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocalTransfer.app/Contents/MacOS/LocalTransfer";
+			};
+			name = Debug;
+		};
+		EA98007F9571BB2014CC5722 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Generated";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		ECD6474E588F8FD73F87FD42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Generated";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F55D37B4F5D2374EFD3E53CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.siddharthakumar-98.LocalTransferTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocalTransfer.app/Contents/MacOS/LocalTransfer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DBBDE26FADD0BF571C354E6 /* Build configuration list for PBXNativeTarget "LocalTransfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				541BA02DDA38750D5E9938C6 /* Debug */,
+				DC7675291F9E55D0B8F0F9BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8EB4F18EC1194C5132C8729A /* Build configuration list for PBXProject "LocalTransfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECD6474E588F8FD73F87FD42 /* Debug */,
+				EA98007F9571BB2014CC5722 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E6337556E13A210795AC5B55 /* Build configuration list for PBXNativeTarget "LocalTransferTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3DB4A5780AC980DD7893AC7 /* Debug */,
+				F55D37B4F5D2374EFD3E53CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B325392C6C0993E0E6D3B69C /* Project object */;
+}
