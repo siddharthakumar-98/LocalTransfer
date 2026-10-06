@@ -40,3 +40,6 @@ build/
 # LocalTransfer dev keystores and pairing data
 *.lt-keystore
 .lt-dev/
+
+# Build outputs of scripts/build-rust.sh
+apps/macos/Generated/
