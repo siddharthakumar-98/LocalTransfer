@@ -1,0 +1,20 @@
+[package]
+name = "lt-ffi"
+description = "UniFFI bindings that expose lt-core to the SwiftUI app."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+# staticlib: linked into the app by Xcode. lib: for `cargo test`.
+crate-type = ["staticlib", "lib"]
+
+[dependencies]
+lt-core.workspace = true
+thiserror.workspace = true
+uniffi.workspace = true
+
+[lints]
+workspace = true

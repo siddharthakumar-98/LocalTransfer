@@ -1,0 +1,20 @@
+[package]
+name = "lt-core"
+description = "LocalTransfer core: the Backend contract shared by the GUI, the CLI and the real node."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+thiserror.workspace = true
+tokio = { workspace = true, features = ["sync"] }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["sync", "macros", "rt"] }
+
+[lints]
+workspace = true
