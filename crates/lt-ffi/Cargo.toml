@@ -14,7 +14,11 @@ crate-type = ["staticlib", "lib"]
 [dependencies]
 lt-core.workspace = true
 thiserror.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread", "time", "sync"] }
 uniffi.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
 
 [lints]
 workspace = true

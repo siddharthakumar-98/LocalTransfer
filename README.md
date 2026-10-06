@@ -29,7 +29,7 @@ lt doctor air                    # why can't my Macs see each other?
 ## Milestones
 | Milestone | Status |
 |---|---|
-| M1: GUI with a mock peer | 🚧 In progress (M1.1 ✅) |
+| M1: GUI with a mock peer | 🚧 In progress (M1.1–M1.2 ✅) |
 | M2: Real CLI transfer over the same Wi-Fi | ⏳ Not started |
 | M3: GUI + real networking combined | ⏳ Not started |
 | Later: BLE, AWDL, dedupe, menu-bar agent, Share extension | 💤 Shelved |

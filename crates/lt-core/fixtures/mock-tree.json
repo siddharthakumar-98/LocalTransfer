@@ -1,0 +1,930 @@
+{
+ "version": 1,
+ "root": "desktop",
+ "entries": [
+  {
+   "name": "Archive",
+   "modified": 1769732942,
+   "children": [
+    {
+     "name": "Backup 2025-12.zip",
+     "size": 598828856,
+     "modified": 1759039829
+    },
+    {
+     "name": "Old Projects.zip",
+     "size": 318557019,
+     "modified": 1768301146
+    },
+    {
+     "name": "Photos 2024.tar.gz",
+     "size": 854187878,
+     "modified": 1784653916
+    },
+    {
+     "name": "Taxes 2025",
+     "modified": 1788372560,
+     "children": [
+      {
+       "name": "Form 1040.pdf",
+       "size": 389102,
+       "modified": 1779621105
+      },
+      {
+       "name": "Form 1099-INT.pdf",
+       "size": 587204,
+       "modified": 1779931041
+      },
+      {
+       "name": "Form 8949.pdf",
+       "size": 140114,
+       "modified": 1771595561
+      },
+      {
+       "name": "Form W-2.pdf",
+       "size": 514838,
+       "modified": 1788836010
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Budget 2026.xlsx",
+   "size": 203698,
+   "modified": 1761233060
+  },
+  {
+   "name": "Contract (signed).pdf",
+   "size": 779285,
+   "modified": 1778720061
+  },
+  {
+   "name": "data.unknownext",
+   "size": 155631,
+   "modified": 1782045917
+  },
+  {
+   "name": "Design Mockups.zip",
+   "size": 158574341,
+   "modified": 1778606701
+  },
+  {
+   "name": "Empty Folder",
+   "modified": 1787944726,
+   "children": []
+  },
+  {
+   "name": "empty.txt",
+   "size": 0,
+   "modified": 1771153654
+  },
+  {
+   "name": "Installer.dmg",
+   "size": 386158684,
+   "modified": 1779546416
+  },
+  {
+   "name": "Invoices 2026",
+   "modified": 1780075320,
+   "children": [
+    {
+     "name": "Invoice 2026-001.pdf",
+     "size": 61382,
+     "modified": 1763972376
+    },
+    {
+     "name": "Invoice 2026-002.pdf",
+     "size": 913024,
+     "modified": 1772596185
+    },
+    {
+     "name": "Invoice 2026-003.pdf",
+     "size": 101698,
+     "modified": 1769701564
+    },
+    {
+     "name": "Invoice 2026-004.pdf",
+     "size": 123542,
+     "modified": 1762778899
+    },
+    {
+     "name": "Invoice 2026-005.pdf",
+     "size": 896622,
+     "modified": 1762093822
+    },
+    {
+     "name": "Invoice 2026-006.pdf",
+     "size": 843995,
+     "modified": 1764546428
+    },
+    {
+     "name": "Invoice 2026-007.pdf",
+     "size": 732758,
+     "modified": 1780067263
+    },
+    {
+     "name": "Invoice 2026-008.pdf",
+     "size": 214108,
+     "modified": 1770733163
+    },
+    {
+     "name": "Invoice 2026-009.pdf",
+     "size": 677019,
+     "modified": 1777690160
+    },
+    {
+     "name": "Invoice 2026-010.pdf",
+     "size": 606452,
+     "modified": 1789525565
+    },
+    {
+     "name": "Invoice 2026-011.pdf",
+     "size": 788541,
+     "modified": 1772789896
+    },
+    {
+     "name": "Invoice 2026-012.pdf",
+     "size": 745274,
+     "modified": 1787733744
+    },
+    {
+     "name": "Invoice 2026-013.pdf",
+     "size": 500341,
+     "modified": 1781868777
+    },
+    {
+     "name": "Invoice 2026-014.pdf",
+     "size": 167842,
+     "modified": 1769915851
+    },
+    {
+     "name": "Invoice 2026-015.pdf",
+     "size": 108096,
+     "modified": 1773949957
+    },
+    {
+     "name": "Invoice 2026-016.pdf",
+     "size": 657846,
+     "modified": 1783481361
+    },
+    {
+     "name": "Invoice 2026-017.pdf",
+     "size": 657984,
+     "modified": 1768677742
+    },
+    {
+     "name": "Invoice 2026-018.pdf",
+     "size": 115401,
+     "modified": 1790359519
+    },
+    {
+     "name": "Receipts",
+     "modified": 1761019292,
+     "children": [
+      {
+       "name": "Receipt 01.pdf",
+       "size": 61586,
+       "modified": 1769117634
+      },
+      {
+       "name": "Receipt 02.pdf",
+       "size": 47189,
+       "modified": 1773610887
+      },
+      {
+       "name": "Receipt 03.pdf",
+       "size": 300285,
+       "modified": 1769490900
+      },
+      {
+       "name": "Receipt 04.pdf",
+       "size": 285216,
+       "modified": 1768488278
+      },
+      {
+       "name": "Receipt 05.pdf",
+       "size": 100089,
+       "modified": 1791042847
+      },
+      {
+       "name": "Receipt 06.pdf",
+       "size": 278535,
+       "modified": 1769775593
+      },
+      {
+       "name": "Receipt 07.pdf",
+       "size": 244136,
+       "modified": 1767393163
+      },
+      {
+       "name": "Receipt 08.pdf",
+       "size": 81539,
+       "modified": 1788173298
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Logo.svg",
+   "size": 11779,
+   "modified": 1771053620
+  },
+  {
+   "name": "Meeting Notes.md",
+   "size": 5953,
+   "modified": 1789826289
+  },
+  {
+   "name": "Music",
+   "modified": 1790759128,
+   "children": [
+    {
+     "name": "01 Track 1.m4a",
+     "size": 7117521,
+     "modified": 1766194406
+    },
+    {
+     "name": "02 Track 2.m4a",
+     "size": 10062880,
+     "modified": 1760060309
+    },
+    {
+     "name": "03 Track 3.m4a",
+     "size": 8718875,
+     "modified": 1777176527
+    },
+    {
+     "name": "04 Track 4.m4a",
+     "size": 7621985,
+     "modified": 1766012568
+    },
+    {
+     "name": "05 Track 5.m4a",
+     "size": 9563713,
+     "modified": 1760703294
+    },
+    {
+     "name": "06 Track 6.m4a",
+     "size": 6877546,
+     "modified": 1767873132
+    },
+    {
+     "name": "07 Track 7.m4a",
+     "size": 9012022,
+     "modified": 1772508231
+    },
+    {
+     "name": "08 Track 8.m4a",
+     "size": 6885764,
+     "modified": 1760062113
+    },
+    {
+     "name": "09 Track 9.m4a",
+     "size": 9830877,
+     "modified": 1773551717
+    },
+    {
+     "name": "10 Track 10.m4a",
+     "size": 4310414,
+     "modified": 1771314825
+    },
+    {
+     "name": "11 Track 11.m4a",
+     "size": 11692137,
+     "modified": 1776695882
+    },
+    {
+     "name": "12 Track 12.m4a",
+     "size": 8701500,
+     "modified": 1760224718
+    }
+   ]
+  },
+  {
+   "name": "Photos",
+   "modified": 1784427085,
+   "children": [
+    {
+     "name": "Porto Weekend",
+     "modified": 1777399344,
+     "children": [
+      {
+       "name": "IMG_5000.jpg",
+       "size": 6875935,
+       "modified": 1769962280
+      },
+      {
+       "name": "IMG_5001.jpg",
+       "size": 7084340,
+       "modified": 1760809183
+      },
+      {
+       "name": "IMG_5002.jpg",
+       "size": 2784878,
+       "modified": 1777575763
+      },
+      {
+       "name": "IMG_5003.jpg",
+       "size": 6993350,
+       "modified": 1784038122
+      },
+      {
+       "name": "IMG_5004.jpg",
+       "size": 4751054,
+       "modified": 1770517972
+      },
+      {
+       "name": "IMG_5005.jpg",
+       "size": 7715220,
+       "modified": 1790663580
+      },
+      {
+       "name": "IMG_5006.jpg",
+       "size": 4099394,
+       "modified": 1770715876
+      },
+      {
+       "name": "IMG_5007.jpg",
+       "size": 3195038,
+       "modified": 1788719807
+      },
+      {
+       "name": "IMG_5008.jpg",
+       "size": 4613709,
+       "modified": 1779259041
+      },
+      {
+       "name": "IMG_5009.jpg",
+       "size": 2705687,
+       "modified": 1759405668
+      },
+      {
+       "name": "IMG_5010.jpg",
+       "size": 7307813,
+       "modified": 1783896304
+      },
+      {
+       "name": "IMG_5011.jpg",
+       "size": 2711707,
+       "modified": 1782787938
+      },
+      {
+       "name": "IMG_5012.jpg",
+       "size": 6340820,
+       "modified": 1770681361
+      },
+      {
+       "name": "IMG_5013.jpg",
+       "size": 5024850,
+       "modified": 1762056018
+      }
+     ]
+    },
+    {
+     "name": "Trip to Lisbon",
+     "modified": 1762256492,
+     "children": [
+      {
+       "name": "IMG_4000.HEIC",
+       "size": 4020639,
+       "modified": 1777716283
+      },
+      {
+       "name": "IMG_4001.HEIC",
+       "size": 4966262,
+       "modified": 1761418449
+      },
+      {
+       "name": "IMG_4002.HEIC",
+       "size": 1874164,
+       "modified": 1761731172
+      },
+      {
+       "name": "IMG_4003.HEIC",
+       "size": 3894852,
+       "modified": 1763784591
+      },
+      {
+       "name": "IMG_4004.HEIC",
+       "size": 2655750,
+       "modified": 1767451092
+      },
+      {
+       "name": "IMG_4005.HEIC",
+       "size": 4811819,
+       "modified": 1765189696
+      },
+      {
+       "name": "IMG_4006.HEIC",
+       "size": 2587785,
+       "modified": 1771329437
+      },
+      {
+       "name": "IMG_4007.HEIC",
+       "size": 3144104,
+       "modified": 1762341282
+      },
+      {
+       "name": "IMG_4008.HEIC",
+       "size": 5665039,
+       "modified": 1763326630
+      },
+      {
+       "name": "IMG_4009.HEIC",
+       "size": 5583356,
+       "modified": 1759617024
+      },
+      {
+       "name": "IMG_4010.HEIC",
+       "size": 3031470,
+       "modified": 1766397269
+      },
+      {
+       "name": "IMG_4011.HEIC",
+       "size": 5122429,
+       "modified": 1780282416
+      },
+      {
+       "name": "IMG_4012.HEIC",
+       "size": 4412745,
+       "modified": 1761613579
+      },
+      {
+       "name": "IMG_4013.HEIC",
+       "size": 4227632,
+       "modified": 1759137573
+      },
+      {
+       "name": "IMG_4014.HEIC",
+       "size": 3273260,
+       "modified": 1779082188
+      },
+      {
+       "name": "IMG_4015.HEIC",
+       "size": 4597019,
+       "modified": 1789831245
+      },
+      {
+       "name": "IMG_4016.HEIC",
+       "size": 5131071,
+       "modified": 1765850490
+      },
+      {
+       "name": "IMG_4017.HEIC",
+       "size": 3537541,
+       "modified": 1768598065
+      },
+      {
+       "name": "IMG_4018.HEIC",
+       "size": 5907092,
+       "modified": 1782940789
+      },
+      {
+       "name": "IMG_4019.HEIC",
+       "size": 3679283,
+       "modified": 1761512172
+      },
+      {
+       "name": "IMG_4020.HEIC",
+       "size": 5949012,
+       "modified": 1780147509
+      },
+      {
+       "name": "IMG_4021.HEIC",
+       "size": 5503984,
+       "modified": 1765919455
+      },
+      {
+       "name": "IMG_4100.MOV",
+       "size": 178262214,
+       "modified": 1762566756
+      },
+      {
+       "name": "IMG_4101.MOV",
+       "size": 60336594,
+       "modified": 1785274507
+      },
+      {
+       "name": "IMG_4102.MOV",
+       "size": 105080105,
+       "modified": 1776814113
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Podcast Episode.mp3",
+   "size": 52912625,
+   "modified": 1782856961
+  },
+  {
+   "name": "Product Demo.mov",
+   "size": 4830116515,
+   "modified": 1764416629
+  },
+  {
+   "name": "Projects",
+   "modified": 1768962100,
+   "children": [
+    {
+     "name": "LocalTransfer",
+     "modified": 1786432733,
+     "children": [
+      {
+       "name": "architecture.png",
+       "size": 588828,
+       "modified": 1770679129
+      },
+      {
+       "name": "build-log.unknownext",
+       "size": 40817,
+       "modified": 1771520876
+      },
+      {
+       "name": "demo-recording.mov",
+       "size": 183293621,
+       "modified": 1783471574
+      },
+      {
+       "name": "notes.md",
+       "size": 42134,
+       "modified": 1787926929
+      },
+      {
+       "name": "protocol-sketch.md",
+       "size": 2560,
+       "modified": 1788535092
+      },
+      {
+       "name": "README.md",
+       "size": 26265,
+       "modified": 1771548676
+      },
+      {
+       "name": "ROADMAP.md",
+       "size": 30764,
+       "modified": 1783058851
+      },
+      {
+       "name": "todo.txt",
+       "size": 21668,
+       "modified": 1788303177
+      }
+     ]
+    },
+    {
+     "name": "Thesis",
+     "modified": 1788762287,
+     "children": [
+      {
+       "name": "Data.xlsx",
+       "size": 913495,
+       "modified": 1774711785
+      },
+      {
+       "name": "Figures.key",
+       "size": 3052721,
+       "modified": 1768277506
+      },
+      {
+       "name": "Outline.md",
+       "size": 3460140,
+       "modified": 1786409057
+      },
+      {
+       "name": "References.bib",
+       "size": 2637058,
+       "modified": 1775075629
+      },
+      {
+       "name": "Thesis Draft v3.docx",
+       "size": 4937644,
+       "modified": 1783384210
+      },
+      {
+       "name": "Thesis Draft v4.docx",
+       "size": 3656512,
+       "modified": 1764621482
+      }
+     ]
+    },
+    {
+     "name": "Website",
+     "modified": 1763091584,
+     "children": [
+      {
+       "name": "app.js",
+       "size": 35624,
+       "modified": 1781355232
+      },
+      {
+       "name": "favicon.ico",
+       "size": 33938,
+       "modified": 1761258497
+      },
+      {
+       "name": "hero-1.png",
+       "size": 2877047,
+       "modified": 1770598778
+      },
+      {
+       "name": "hero-2.png",
+       "size": 2057992,
+       "modified": 1783420857
+      },
+      {
+       "name": "hero-3.png",
+       "size": 2557413,
+       "modified": 1759360263
+      },
+      {
+       "name": "hero-4.png",
+       "size": 520395,
+       "modified": 1789518736
+      },
+      {
+       "name": "hero-5.png",
+       "size": 2493171,
+       "modified": 1760603593
+      },
+      {
+       "name": "index.html",
+       "size": 28631,
+       "modified": 1790753742
+      },
+      {
+       "name": "logo.svg",
+       "size": 1488,
+       "modified": 1773705146
+      },
+      {
+       "name": "robots.txt",
+       "size": 56542,
+       "modified": 1771188178
+      },
+      {
+       "name": "styles.css",
+       "size": 27709,
+       "modified": 1789409530
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Quarterly Report.pdf",
+   "size": 1495635,
+   "modified": 1777777483
+  },
+  {
+   "name": "Reading",
+   "modified": 1780911583,
+   "children": [
+    {
+     "name": "Apple Platform Security.pdf",
+     "size": 9608697,
+     "modified": 1764641144
+    },
+    {
+     "name": "AWDL paper.pdf",
+     "size": 11830750,
+     "modified": 1790821025
+    },
+    {
+     "name": "BLAKE3 paper.pdf",
+     "size": 10477696,
+     "modified": 1781565557
+    },
+    {
+     "name": "Bonjour Overview.pdf",
+     "size": 335574,
+     "modified": 1782052975
+    },
+    {
+     "name": "cap-std design.pdf",
+     "size": 12382672,
+     "modified": 1772285669
+    },
+    {
+     "name": "Designing Data-Intensive Apps notes.pdf",
+     "size": 4689663,
+     "modified": 1766938499
+    },
+    {
+     "name": "Gatekeeper and notarization.pdf",
+     "size": 7361118,
+     "modified": 1788425695
+    },
+    {
+     "name": "Local Network privacy FAQ.pdf",
+     "size": 11670709,
+     "modified": 1766770276
+    },
+    {
+     "name": "Magic Wormhole talk.pdf",
+     "size": 5573830,
+     "modified": 1788305934
+    },
+    {
+     "name": "Noise Protocol.pdf",
+     "size": 10316004,
+     "modified": 1778226109
+    },
+    {
+     "name": "QUIC RFC 9000.pdf",
+     "size": 4760986,
+     "modified": 1760655808
+    },
+    {
+     "name": "reading-list.md",
+     "size": 6710,
+     "modified": 1772358825
+    },
+    {
+     "name": "Rust Atomics and Locks notes.pdf",
+     "size": 6769706,
+     "modified": 1784512914
+    },
+    {
+     "name": "SPAKE2 draft.pdf",
+     "size": 12530157,
+     "modified": 1772881199
+    },
+    {
+     "name": "SwiftUI Table notes.pdf",
+     "size": 5779641,
+     "modified": 1776837152
+    },
+    {
+     "name": "Syncthing BEP.pdf",
+     "size": 6417822,
+     "modified": 1778017171
+    },
+    {
+     "name": "TLS 1.3 RFC 8446.pdf",
+     "size": 4580734,
+     "modified": 1760957954
+    },
+    {
+     "name": "UniFFI guide.pdf",
+     "size": 5496135,
+     "modified": 1788515928
+    },
+    {
+     "name": "WireGuard whitepaper.pdf",
+     "size": 11451259,
+     "modified": 1773683278
+    }
+   ]
+  },
+  {
+   "name": "Resume.pdf",
+   "size": 112471,
+   "modified": 1790573450
+  },
+  {
+   "name": "Screenshots",
+   "modified": 1765483201,
+   "children": [
+    {
+     "name": "Screenshot 2026-01-24 at 13.32.48.png",
+     "size": 954120,
+     "modified": 1781391547
+    },
+    {
+     "name": "Screenshot 2026-01-24 at 16.34.07.png",
+     "size": 4073187,
+     "modified": 1775685528
+    },
+    {
+     "name": "Screenshot 2026-01-26 at 14.25.17.png",
+     "size": 482415,
+     "modified": 1768405541
+    },
+    {
+     "name": "Screenshot 2026-02-01 at 13.15.14.png",
+     "size": 790064,
+     "modified": 1763564282
+    },
+    {
+     "name": "Screenshot 2026-02-02 at 12.49.18.png",
+     "size": 539471,
+     "modified": 1769294838
+    },
+    {
+     "name": "Screenshot 2026-02-13 at 10.22.54.png",
+     "size": 1647454,
+     "modified": 1785732271
+    },
+    {
+     "name": "Screenshot 2026-02-19 at 15.02.01.png",
+     "size": 597786,
+     "modified": 1768620895
+    },
+    {
+     "name": "Screenshot 2026-02-25 at 9.55.07.png",
+     "size": 845862,
+     "modified": 1786755369
+    },
+    {
+     "name": "Screenshot 2026-03-09 at 11.15.47.png",
+     "size": 2559348,
+     "modified": 1782794438
+    },
+    {
+     "name": "Screenshot 2026-03-18 at 12.10.29.png",
+     "size": 1796351,
+     "modified": 1771007086
+    },
+    {
+     "name": "Screenshot 2026-05-18 at 9.43.46.png",
+     "size": 685264,
+     "modified": 1789223981
+    },
+    {
+     "name": "Screenshot 2026-05-25 at 14.07.18.png",
+     "size": 2028337,
+     "modified": 1765971470
+    },
+    {
+     "name": "Screenshot 2026-05-27 at 17.38.12.png",
+     "size": 845854,
+     "modified": 1775523574
+    },
+    {
+     "name": "Screenshot 2026-06-07 at 13.44.59.png",
+     "size": 3071806,
+     "modified": 1787607758
+    },
+    {
+     "name": "Screenshot 2026-06-07 at 16.25.56.png",
+     "size": 4040690,
+     "modified": 1787485742
+    },
+    {
+     "name": "Screenshot 2026-07-08 at 16.37.17.png",
+     "size": 3599797,
+     "modified": 1759280126
+    },
+    {
+     "name": "Screenshot 2026-07-09 at 16.40.53.png",
+     "size": 1735017,
+     "modified": 1766219720
+    },
+    {
+     "name": "Screenshot 2026-07-11 at 13.09.13.png",
+     "size": 3407126,
+     "modified": 1773874196
+    },
+    {
+     "name": "Screenshot 2026-07-19 at 15.23.14.png",
+     "size": 785005,
+     "modified": 1781528686
+    },
+    {
+     "name": "Screenshot 2026-07-20 at 10.24.24.png",
+     "size": 2704137,
+     "modified": 1779718952
+    },
+    {
+     "name": "Screenshot 2026-09-08 at 14.53.49.png",
+     "size": 3459579,
+     "modified": 1761449221
+    },
+    {
+     "name": "Screenshot 2026-09-10 at 18.56.55.png",
+     "size": 1721607,
+     "modified": 1784513203
+    },
+    {
+     "name": "Screenshot 2026-09-20 at 9.35.12.png",
+     "size": 3208003,
+     "modified": 1787756226
+    },
+    {
+     "name": "Screenshot 2026-09-25 at 17.58.00.png",
+     "size": 2716955,
+     "modified": 1773320042
+    }
+   ]
+  },
+  {
+   "name": "Slides.key",
+   "size": 29377709,
+   "modified": 1781347133
+  },
+  {
+   "name": "todo.txt",
+   "size": 4070,
+   "modified": 1780054191
+  },
+  {
+   "name": "Wallpaper.png",
+   "size": 4271408,
+   "modified": 1769969979
+  }
+ ]
+}

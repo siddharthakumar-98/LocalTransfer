@@ -10,12 +10,15 @@
 #![forbid(unsafe_code)]
 
 pub mod backend;
+pub mod mock;
+pub mod naming;
 pub mod stub;
 
 pub use backend::{
     Backend, BackendError, ConnectionState, Direction, Entry, EntryKind, Event, LinkQuality,
     Outcome, PeerInfo, RemotePath, TransferId, TransferRequest,
 };
+pub use mock::{MockBackend, MockConfig, MockControl};
 pub use stub::StubBackend;
 
 /// The version of `lt-core`, as declared in its Cargo manifest.

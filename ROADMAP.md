@@ -7,7 +7,7 @@ LocalTransfer moves files between two Macs (an M4 MacBook Pro and an M2 MacBook 
 | Milestone | Branch | Status |
 |---|---|---|
 | M0: Repo setup, roadmap | `docs/roadmap` | ✅ Done |
-| M1: GUI with a mock peer | `M1` | 🚧 In progress: M1.1 ✅ |
+| M1: GUI with a mock peer | `M1` | 🚧 In progress: M1.1 ✅ M1.2 ✅ |
 | M2: Real CLI transfer over the same Wi-Fi | `M2` | ⏳ Not started |
 | M3: GUI + real networking combined | `M3` | ⏳ Not started |
 | Later: BLE, AWDL, content-addressed skip, menu-bar agent, Share extension, drop folder, transport auto-switch | — | 💤 Shelved |
@@ -259,7 +259,7 @@ pub enum BackendError { NotConnected, ConnectionLost, NotFound, PermissionDenied
                         InvalidPath, Conflict, HashMismatch, Io(String), Internal(String) }
 ```
 
-- **Mock-only controls** are a separate `MockControl` interface, not part of `Backend`: `set_link(Good | Weak | Down)`, `drop_connection(Blip | Permanent)`, `drop_at(fraction)`, `set_profile(..)`, `reset_sandbox()`. They're exposed only in Debug builds and in `--mock` mode.
+- **Mock-only controls** are a separate `MockControl` interface, not part of `Backend`: `set_link(Good | Weak | Down)`, `drop_connection(Blip | Permanent)`, `drop_at(percent)`, `set_profile(..)`, `reset_sandbox()`, plus `sandbox_root()` and `received_dir()` for "Reveal in Finder". They're exposed only in Debug builds and in `--mock` mode.
 - **Error mapping.** `BackendError` variants match the wire `ErrorCode`s (§6) wherever they overlap, so the error text the GUI shows in M1 stays correct in M3.
 - **Local browsing isn't part of the trait.** The "This Mac" pane uses `FileManager` directly in Swift. The backend covers only the peer and transfers.
 - **Stability rule.** After M1 merges, the trait and its types are **append-only**: methods may be added (with default implementations) and enum variants appended, but nothing is renamed or removed. M2 therefore can't break the app it isn't allowed to touch, and CI builds the app on every branch to prove it.
@@ -495,18 +495,29 @@ Rules for every milestone:
 | Step | What gets built | Done-check |
 |---|---|---|
 | ✅ **M1.1** Skeleton and build pipeline | Cargo workspace (`rust-toolchain.toml`, `deny.toml`, clippy config), `lt-core` with the `Backend` types and a stub, `lt-ffi` (UniFFI), `scripts/build-rust.sh`, and `apps/macos/LocalTransfer.xcodeproj` (macOS 14, App Sandbox off, ad-hoc "Sign to Run Locally"). The Xcode build phase calls the script. GitHub Actions CI covers the Rust jobs and `xcodebuild`. | `xcodebuild -project apps/macos/LocalTransfer.xcodeproj -scheme LocalTransfer -destination 'platform=macOS,arch=arm64' build` succeeds from a clean clone. The app launches into an empty two-pane window showing the `lt-core` version string fetched over UniFFI. `cargo test` and CI are green. |
-| **M1.2** `MockBackend` | The full `Backend` trait and types (§5), `MockBackend` (fixture tree, latency and throughput profiles, link states, Blip/Drop/Drop-at-50%, sandboxed atomic writer), `MockControl`, and the FFI exports for both plus the `EventListener` callback. | Rust tests with tokio time paused cover: listing matches the fixture; progress is monotonic, throttled to ≤10 Hz and reaches 100%; exactly one `TransferFinished` per transfer; Blip gives suspend then resume; Drop gives `Failed(ConnectionLost)`; cancel removes the partial; a clash gives `x (1)`; a property test shows writes stay inside the sandbox and source files are byte-identical before and after. `xcodebuild build` is still green. |
+| ✅ **M1.2** `MockBackend` | The full `Backend` trait and types (§5), `MockBackend` (fixture tree, latency and throughput profiles, link states, Blip/Drop/Drop-at-50%, sandboxed atomic writer), `MockControl`, and the FFI exports for both plus the `EventListener` callback. | Rust tests with tokio time paused cover: listing matches the fixture; progress is monotonic, throttled to ≤10 Hz and reaches 100%; exactly one `TransferFinished` per transfer; Blip gives suspend then resume; Drop gives `Failed(ConnectionLost)`; cancel removes the partial; a clash gives `x (1)`; a property test shows writes stay inside the sandbox and source files are byte-identical before and after. `xcodebuild build` is still green. |
 | **M1.3** Two-pane Finder-style browser | `LocalFileSource` (FileManager), `BackendClient` (Swift wrapper over the FFI object), the pane view (`Table` with Name, Date Modified, Size and Kind columns, sorting, lazy disclosure rows, real icons, back and forward, path bar), and both panes opening at `~/Desktop`. | XCTest view-model tests: Finder-like sort per column in both directions, navigation history, path-bar segments, size and date formatting, icon and Kind lookup for folder, PDF, PNG, ZIP and an unknown extension. Manually, both panes browse, folders expand, and back and the path bar work. |
 | **M1.4** Transfers | Drag and drop in both directions (local file URLs onto the peer pane trigger Send; a custom `Transferable` remote-item type dropped on the local pane triggers Get), Send/Get buttons, the transfer list (progress, speed, ETA, Cancel), and the mock-mode banner with Reveal. | XCUITest with `--mock --mock-profile fast`: select a file, Send, it reaches 100% and appears in the peer pane; select a peer file, Get, it reaches 100% and the file exists in `MockSandbox/Received/`. Manually, dragging works in both directions, and `~/Desktop` is unchanged afterwards (compare `ls -la` before and after). |
 | **M1.5** Connection states and error UI | Connection indicator, Debug menu (Blip, Drop, Drop-at-50%, link quality, reset and reveal sandbox), the "Reconnecting…" row state, failed rows with a clear reason and Retry, and the connection-lost banner. | XCUITest: start a transfer, trigger Drop at 50%, and the row shows "Connection to MacBook Air lost" with Retry, the indicator turns grey, and no file or partial is left in the sandbox. Blip shows "Reconnecting…" and then completes. The full M1 checklist (§10) passes. |
 
 **M1.1 notes (done 2026-10-06):**
-- The `M1` branch starts from `docs/replan`, so it carries this re-plan; `main` still has the original roadmap until `M1` merges.
+- The `M1` branch starts from `docs/replan`, so it carries this re-plan. (The re-plan has since reached `main` through PR #1.)
 - The project is generated with **XcodeGen** from `apps/macos/project.yml`. Both the spec and the generated `.xcodeproj` are committed. Regenerate with `cd apps/macos && xcodegen` after adding files.
 - UniFFI 0.32.2 is pinned exactly. The workspace's `uniffi-bindgen` crate builds the Swift bindgen from the same version, so the bindings always match the scaffolding.
 - The FFI version function is `lt_core_version()` (Swift: `ltCoreVersion()`) rather than `version()`, to keep a generic name out of the app's module.
 - UniFFI is MPL-2.0, so `deny.toml` allows MPL-2.0. It's used unmodified, which leaves LocalTransfer's own MIT OR Apache-2.0 licensing unaffected.
 - The app builds with Swift 5 language mode; moving to Swift 6 strict concurrency is deferred.
+
+**M1.2 notes (done 2026-10-06):**
+- `MockControl::drop_at` takes a whole **percent** (0–100) rather than a fraction, which keeps float casts out of the byte math. When armed, the mock caps each tick so the drop lands exactly at the threshold, even with the `fast` profile.
+- A fourth throughput profile, **`fast`** (~1 GiB/s, no latency), exists for UI tests and demos (`--mock-profile fast` in M1.4).
+- During a Blip the connection state is `Connecting` (shown as "Reconnecting…"); a permanent drop is `Disconnected`.
+- Getting a folder whose name is already taken in `Received/` gives a Finder-style folder name (`Photos (1)`), so folders never merge.
+- The fixture has 182 entries, 3 levels deep.
+- The contract suite lives in `crates/lt-core/tests/contract.rs`, written against a `Harness` trait so M2 can add a harness for the real node. Mock-only behaviour and the sandbox property test (48 cases) are in `crates/lt-core/tests/mock.rs`.
+- `lt-ffi` owns a 2-thread tokio runtime. Async FFI calls hop onto it, and `set_event_listener` forwards events to a Swift `EventListener` from a runtime thread.
+- The app now starts on the mock peer (sandboxed under `~/Library/Application Support/LocalTransfer/MockSandbox`), falling back to the stub if the sandbox can't be created. Two Swift tests exercise the mock through the FFI.
+- CI: `actions/checkout` bumped from v4 to v5 (Node 24), which removes the Node 20 deprecation warning.
 
 **M1 is done when:**
 - the app builds from the command line with `xcodebuild`

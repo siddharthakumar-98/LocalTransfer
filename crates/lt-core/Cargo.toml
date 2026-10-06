@@ -11,10 +11,15 @@ publish.workspace = true
 [dependencies]
 async-trait.workspace = true
 thiserror.workspace = true
-tokio = { workspace = true, features = ["sync"] }
+tokio = { workspace = true, features = ["sync", "time", "rt", "macros"] }
+serde.workspace = true
+serde_json.workspace = true
+cap-std.workspace = true
 
 [dev-dependencies]
-tokio = { workspace = true, features = ["sync", "macros", "rt"] }
+tokio = { workspace = true, features = ["sync", "time", "rt", "macros", "test-util"] }
+proptest.workspace = true
+tempfile.workspace = true
 
 [lints]
 workspace = true

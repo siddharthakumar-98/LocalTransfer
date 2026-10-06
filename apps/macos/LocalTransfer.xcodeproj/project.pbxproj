@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371A344B8A5177B30BFB467C /* MockBackendFFITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532226DE420D3B6DAD2F8CB /* MockBackendFFITests.swift */; };
 		872B66AB46AE068488AB1D68 /* lt_ffi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630670DCBDCCAB1F7F510C4D /* lt_ffi.swift */; };
 		C39EFC8C9170761433223FFC /* LocalTransferApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B3879F0E65BDCB18920B06 /* LocalTransferApp.swift */; };
 		C74D925763EC0029A196DAC6 /* FFIVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2E0B3FD94CB4983CBC8AA /* FFIVersionTests.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		1497423C5AC85D17A51C7426 /* LocalTransfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalTransfer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630670DCBDCCAB1F7F510C4D /* lt_ffi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lt_ffi.swift; sourceTree = "<group>"; };
+		6532226DE420D3B6DAD2F8CB /* MockBackendFFITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBackendFFITests.swift; sourceTree = "<group>"; };
 		741B501CF3D92D0981613C48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		86F2E0B3FD94CB4983CBC8AA /* FFIVersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFIVersionTests.swift; sourceTree = "<group>"; };
 		9941CE83890DDE6DA8471E13 /* LocalTransferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalTransferTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				86F2E0B3FD94CB4983CBC8AA /* FFIVersionTests.swift */,
+				6532226DE420D3B6DAD2F8CB /* MockBackendFFITests.swift */,
 			);
 			path = LocalTransferTests;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74D925763EC0029A196DAC6 /* FFIVersionTests.swift in Sources */,
+				371A344B8A5177B30BFB467C /* MockBackendFFITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
